@@ -1,0 +1,44 @@
+version: "3.6"
+
+services:
+
+  # The neo4j graph database
+  neo4j:
+    image: neo4j:3.4.1
+    hostname: neo4j
+    expose:
+     - "7474"
+     - "7687"
+    ports:
+     - "7474:7474"
+     - "7687:7687"
+    environment:
+     - NEO4J_AUTH=none
+    volumes:
+     - $PWD/conf/neo4j:/conf
+
+  pht-service:
+    image: lukaszimmermann/pht-service:test
+    hostname: pht-service
+    expose:
+      - 8770
+    ports:
+      - "8770:8770"
+    links:
+      - neo4j
+    depends_on:
+      - neo4j
+
+  registry:
+    image: lukaszimmermann/pht-train-registry
+    hostname: registry
+    ports:
+     - "5000:5000"
+
+  test-service:
+    build: test-service
+
+    # Test service needs to access docker on the host
+    volumes:
+      - "${DOCKER_SOCKET}:/var/run/docker.sock"
+      - "/etc/docker:/etc/docker"
