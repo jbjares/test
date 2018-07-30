@@ -18,12 +18,14 @@ class SingleExposedPortContainer(imageName: String, private val originalPort : I
         this.withExposedPorts(originalPort)
     }
 
+    val mappedPort : Int = this.getMappedPort(this.originalPort)
+
     fun getExternalURI() : URI {
 
         if (":" in this.containerIpAddress) {
 
             throw IllegalStateException("For some reason, the IP address of the container contains the ':' character!")
         }
-        return URI.create("http://" + this.containerIpAddress + ":" + this.getMappedPort(this.originalPort))
+        return URI.create("http://" + this.containerIpAddress + ":" + this.mappedPort)
     }
 }
