@@ -18,7 +18,7 @@ class SingleExposedPortContainer(imageName: String, private val originalPort : I
         this.withExposedPorts(originalPort)
     }
 
-    val mappedPort : Int = this.getMappedPort(this.originalPort)
+    val mappedPort : Int by lazy { this.getMappedPort(this.originalPort) }
 
     fun getExternalURI() : URI {
 
