@@ -1,4 +1,4 @@
-package de.difuture.ekut.pht.lib.test
+package de.difuture.ekut.pht.test.lib
 
 import org.testcontainers.containers.GenericContainer
 import java.net.URI
