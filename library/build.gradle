@@ -1,5 +1,5 @@
 plugins {
-    id 'org.jetbrains.kotlin.jvm' version '1.2.51'
+    id 'org.jetbrains.kotlin.jvm' version '1.2.60'
 
 }
 repositories {
@@ -18,8 +18,8 @@ compileTestKotlin {
 }
 
 dependencies {
-    compile "org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.2.51"
-    compile 'org.testcontainers:testcontainers:1.8.1'
+    compile "org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.2.60"
+    compile 'org.testcontainers:testcontainers:1.8.3'
 }
 
 // Publish locally

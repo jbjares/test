@@ -5,11 +5,12 @@ import java.net.URI
 
 
 /**
- * Workaround for Kotlin, as described in :
  *
- * https://github.com/testcontainers/testcontainers-java/issues/318
+ * Implements a [GenericContainer] that exposes exactly one port for testing.
  *
  * @author Lukas Zimmermann
+ * @since 0.0.1
+ *
  */
 class SingleExposedPortContainer(imageName: String, private val originalPort : Int)
     : GenericContainer<SingleExposedPortContainer>(imageName) {
@@ -18,7 +19,7 @@ class SingleExposedPortContainer(imageName: String, private val originalPort : I
         this.withExposedPorts(originalPort)
     }
 
-    val mappedPort : Int by lazy { this.getMappedPort(this.originalPort) }
+    private val mappedPort : Int by lazy { this.getMappedPort(this.originalPort) }
 
     fun getExternalURI() : URI {
 
