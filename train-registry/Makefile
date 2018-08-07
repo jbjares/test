@@ -1,4 +1,6 @@
-.PHONY: all
+.PHONY: build push
 
-all:
-	docker build --no-cache --pull --rm -t lukaszimmermann/pht-test-train-registry:latest .
+build:
+	docker build --no-cache --pull --rm -t personalhealthtrain/test-train-registry:latest .
+push:
+	docker push personalhealthtrain/test-train-registry:latest
