@@ -8,4 +8,5 @@ package de.difuture.ekut.pht.test.lib
  * available registry, such as Docker Hub.
  *
  */
-const val TEST_TRAIN_REGISTRY_REPOSITORY = "lukaszimmermann/pht-test-train-registry:latest"
+const val TEST_TRAIN_REGISTRY_REPOSITORY = "personalhealthtrain/test-train-registry:latest"
+const val TEST_TRAIN_REGISTRY_REPOSITORY_NOTIFICATIONS = "personalhealthtrain/test-train-registry-notifications:latest"

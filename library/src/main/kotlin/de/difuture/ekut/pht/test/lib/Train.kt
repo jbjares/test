@@ -1,4 +1,4 @@
-@file:JvmName("Repository")
+@file:JvmName("Train")
 package de.difuture.ekut.pht.test.lib
 
 // List of Test Trains
