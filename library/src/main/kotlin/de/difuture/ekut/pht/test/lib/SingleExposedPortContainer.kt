@@ -19,6 +19,8 @@ class SingleExposedPortContainer(imageName: String, private val originalPort : I
         this.withExposedPorts(originalPort)
     }
 
+    // We need to initialize the port as lazy, otherwise the JVM tries to set this mapped as a field while
+    // the container has not started yet and thus the mapped port is not yet available
     private val mappedPort : Int by lazy { this.getMappedPort(this.originalPort) }
 
     fun getExternalURI() : URI {
