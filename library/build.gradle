@@ -1,5 +1,5 @@
 plugins {
-    id 'org.jetbrains.kotlin.jvm' version '1.2.60'
+    id 'org.jetbrains.kotlin.jvm' version '1.2.61'
 
 }
 repositories {
@@ -18,16 +18,15 @@ compileTestKotlin {
 }
 
 dependencies {
-    compile "org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.2.60"
+    compile "org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.2.61"
     compile 'org.testcontainers:testcontainers:1.8.3'
-    compile group: 'com.natpryce', name: 'hamkrest', version: '1.5.0.0'
 }
 
 // Publish locally
 apply plugin: 'maven-publish'
 
 group = "de.difuture.ekut.pht.test"
-version = "0.0.1-SNAPSHOT"
+version = "0.0.1"
 
 publishing {
     publications {

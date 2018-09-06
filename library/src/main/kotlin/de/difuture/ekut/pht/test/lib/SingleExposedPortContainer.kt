@@ -12,7 +12,7 @@ import java.net.URI
  * @since 0.0.1
  *
  */
-class SingleExposedPortContainer(imageName: String, private val originalPort : Int)
+class SingleExposedPortContainer(imageName: String, private val originalPort: Int)
     : GenericContainer<SingleExposedPortContainer>(imageName) {
 
     init {
@@ -21,9 +21,9 @@ class SingleExposedPortContainer(imageName: String, private val originalPort : I
 
     // We need to initialize the port as lazy, otherwise the JVM tries to set this mapped as a field while
     // the container has not started yet and thus the mapped port is not yet available
-    private val mappedPort : Int by lazy { this.getMappedPort(this.originalPort) }
+    val mappedPort: Int by lazy { this.getMappedPort(this.originalPort) }
 
-    fun getExternalURI() : URI {
+    fun getExternalURI(): URI {
 
         if (":" in this.containerIpAddress) {
 
