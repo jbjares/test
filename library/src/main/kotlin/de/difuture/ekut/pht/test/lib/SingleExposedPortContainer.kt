@@ -3,7 +3,6 @@ package de.difuture.ekut.pht.test.lib
 import org.testcontainers.containers.GenericContainer
 import java.net.URI
 
-
 /**
  *
  * Implements a [GenericContainer] that exposes exactly one port for testing.
