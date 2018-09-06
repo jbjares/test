@@ -48,7 +48,7 @@ publishing {
 
 model {
     tasks.generatePomFileForMavenPublication {
-        destination = file("$buildDir/libs/library-0.0.1.pom")
+        destination = file("$buildDir/libs/lib-0.0.1.pom")
     }
 }
 
